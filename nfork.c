@@ -3,7 +3,7 @@
 
 int main(int argc, char *argv[])
 {
-    int n = (int) argv[1];        
+    int n = strtol(argv[1], NULL, 10);        
     printf("%d", n);
     for(int i = 1; i < n; i++) {
         if(fork() == 0) {
