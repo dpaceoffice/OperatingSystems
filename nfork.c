@@ -7,7 +7,7 @@ int main(int argc, char *argv[])
     for(int i = 1; i <= n; i++) {
         if(fork() == 0) {
             printf("PID: %d, Parent PID: %d\n", getpid(), getppid());
-            exit(0);
+            //xit(0);
         } else {
            wait(NULL);
         }
