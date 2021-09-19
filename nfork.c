@@ -10,6 +10,7 @@ int main(int argc, char *argv[])
             printf("Parent PID: %d, PID: %d\n", getpid(), getppid());
             exit(0);
         }
+        waitpid();
     }
 
     return 0;
