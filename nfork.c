@@ -9,8 +9,8 @@ int main(int argc, char *argv[])
             printf("PID: %d, Parent PID: %d\n", getpid(), getppid());
             exit(0);
         } else {
-            waitpid();
+           wait(NULL);
         }
     }
-    exit(0);
+    return 0;
 }
