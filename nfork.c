@@ -11,6 +11,6 @@ int main(int argc, char *argv[])
             exit(0);
         }
     }
-    waitpid();
+
     return 0;
 }
