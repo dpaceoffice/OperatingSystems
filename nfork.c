@@ -8,7 +8,7 @@ int main(int argc, char *argv[])
         if(fork() == 0) {
             printf("PID: %d, Parent PID: %d\n", getpid(), getppid());
         } else {
-           waitpid();
+           wait(NULL);
         }
     }
     return 0;
