@@ -1,5 +1,20 @@
 import pydot
 
+def sort():
+    file = open("test.txt")
+    level = 0
+    prev = None
+    for line in file.readlines():
+        line = line.strip()
+        parent = line.split(',')[0].replace('PPID: ', '')
+        child = line.split(',')[1].replace(' PID: ', '')
+        if(prev != int(parent)):
+            if(prev != None):
+                level += 1
+            prev = int(parent)
+        
+        draw('PID:'+parent+'\nLevel:'+str(level)+'', 'PID:'+child+'\nLevel:'+str(level+1)+'')
+
 menu = {'dinner':
             {'chicken':'good',
              'beef':'average',
@@ -30,5 +45,6 @@ def visit(node, parent=None):
             draw(k, k+'_'+v)
 
 graph = pydot.Dot(graph_type='graph')
-visit(menu)
+#visit(menu)
+sort()
 graph.write_png('example1_graph.png') 
