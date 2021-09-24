@@ -6,7 +6,7 @@ int main(int argc, char *argv[])
     int n = strtol(argv[1], NULL, 10);        
     for(int i = 1; i <= n; i++) {
         if(fork() == 0) {
-            printf("PID: %d, Parent PID: %d\n", getpid(), getppid());
+            printf("Parent PID: %d, PID: %d\n",  getppid(), getpid());
         } else {
            wait(NULL);
         }
